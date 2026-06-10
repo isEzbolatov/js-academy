@@ -17,7 +17,7 @@ export class AppCore {
     async init() {
         console.log('JS Academy запущен');
 
-        // Рендерер
+        // Рендерер уроков
         this.renderer = new ContentRenderer({
             theoryContainerSelector: '#theoryBlock',
             codeEditorSelector: '#codeEditor',
@@ -52,7 +52,16 @@ export class AppCore {
             else document.getElementById('codeEditor').value = '';
         });
 
-        // ИИ
+        // Очистка консоли
+        const clearBtn = document.getElementById('clearConsoleBtn');
+        if (clearBtn) {
+            clearBtn.addEventListener('click', () => {
+                const consoleOutput = document.getElementById('consoleOutput');
+                if (consoleOutput) consoleOutput.innerHTML = '';
+            });
+        }
+
+        // ИИ-ментор и чат
         this.ai = new AIConnector();
         this.chatUI = new ChatUI({
             messagesContainer: document.getElementById('chatMessages'),
