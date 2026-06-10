@@ -1,14 +1,10 @@
-﻿/**
- * @file app.js - Точка входа приложения JS Academy.
- */
-
-import { AppCore } from './core/AppCore.js';
+﻿import { AppCore } from './core/AppCore.js';
 import { Store } from './store/Store.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const store = new Store({
         currentLesson: null,
-        userCode: '',
+        lessonCodes: {},
         chatHistory: []
     });
 

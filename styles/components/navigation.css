@@ -1,5 +1,25 @@
-﻿.c-nav { padding: 20px; }
-.c-nav__title { font-size: 18px; margin-bottom: 20px; color: var(--color-text-secondary); }
-.c-nav__list-item { padding: 10px; cursor: pointer; border-radius: 4px; transition: background-color var(--transition-fast); }
-.c-nav__list-item:hover { background-color: var(--color-bg-hover); }
-.c-nav__list-item--active { background-color: var(--color-bg-tertiary); color: var(--color-text-accent); }
+﻿.c-nav {
+    padding: 20px;
+}
+
+.c-nav__title {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--color-text-secondary);
+}
+
+.c-nav__list-item {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color var(--transition-fast);
+}
+
+.c-nav__list-item:hover {
+    background-color: var(--color-bg-hover);
+}
+
+.c-nav__list-item--active {
+    background-color: var(--color-bg-tertiary);
+    color: var(--color-text-accent);
+}

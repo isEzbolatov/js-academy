@@ -1,0 +1,17 @@
+/* Цвета подсветки синтаксиса */
+.hljs-keyword {
+    color: #569CD6;
+}
+
+.hljs-string {
+    color: #CE9178;
+}
+
+.hljs-comment {
+    color: #6A9955;
+    font-style: italic;
+}
+
+.hljs-number {
+    color: #B5CEA8;
+}

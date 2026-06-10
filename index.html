@@ -9,16 +9,38 @@
     <link rel="manifest" href="manifest.json">
     <title>JS Academy - Интерактивный учебник</title>
     <link rel="stylesheet" href="styles/main.css">
+    <style>
+        /* Инлайн-стили подсветки — чтобы точно работало */
+        .hljs-keyword {
+            color: #569CD6;
+        }
+
+        .hljs-string {
+            color: #CE9178;
+        }
+
+        .hljs-comment {
+            color: #6A9955;
+            font-style: italic;
+        }
+
+        .hljs-number {
+            color: #B5CEA8;
+        }
+    </style>
 </head>
 
 <body class="app">
     <div class="app__container">
+        <!-- Левая панель: Навигация -->
         <aside class="app__sidebar app__sidebar--left" role="navigation" aria-label="Навигация по урокам">
             <nav class="c-nav" id="mainNavigation">
                 <h2 class="c-nav__title">Содержание курса</h2>
                 <ul class="c-nav__list" role="tablist"></ul>
             </nav>
         </aside>
+
+        <!-- Центральная панель: Теория + Редактор -->
         <main class="app__content" role="main">
             <section class="c-content">
                 <article class="c-content__theory" id="theoryBlock" aria-label="Теоретический материал"></article>
@@ -29,6 +51,7 @@
                         Выполнить</button>
                     <button class="c-editor__button c-editor__button--reset" id="resetCodeBtn"
                         aria-label="Сбросить код">↺ Сброс</button>
+                    <button class="c-editor__button" id="askAIButton">🤖 Спросить про код</button>
                 </div>
                 <div class="c-editor__input-container">
                     <textarea class="c-editor__input" id="codeEditor" spellcheck="false"
@@ -47,6 +70,8 @@
                     title="Изолированная среда выполнения кода" hidden></iframe>
             </section>
         </main>
+
+        <!-- Правая панель: Чат с ИИ-ментором -->
         <aside class="app__sidebar app__sidebar--right" role="complementary" aria-label="Чат с ИИ-ментором">
             <div class="c-chat" id="aiChat">
                 <div class="c-chat__header">
@@ -63,7 +88,17 @@
             </div>
         </aside>
     </div>
+
     <script type="module" src="js/app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('Service Worker зарегистрирован:', reg.scope))
+                    .catch(err => console.error('Ошибка регистрации SW:', err));
+            });
+        }
+    </script>
 </body>
 
 </html>

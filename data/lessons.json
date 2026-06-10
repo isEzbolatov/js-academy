@@ -2,21 +2,45 @@
     "lessons": [
         {
             "id": "intro",
-            "title": "Введение в JavaScript",
-            "content": "## Переменные и типы данных\n\nJavaScript — это динамически типизированный язык. Это означает, что тип переменной определяется автоматически во время выполнения.\n\n### Объявление переменных\n\n- `let` — блочная область видимости\n- `const` — константа, значение нельзя переопределить\n- `var` — устаревший способ (функциональная область видимости)\n\n```javascript\nlet message = 'Привет, мир!';\nconst PI = 3.14;\n```",
-            "initialCode": "// Объявите переменную и выведите её в консоль\nlet message = 'Привет, мир!';\nconsole.log(message);"
+            "title": "1. Переменные и типы данных",
+            "content": "## Переменные и типы данных\n\nJavaScript — это динамически типизированный язык. Это означает, что тип переменной определяется во время выполнения.\n\n### Объявление переменных\n\n- `let` — блочная область видимости\n- `const` — константа, значение нельзя переопределить\n- `var` — устаревший способ (функциональная область видимости)\n\n```javascript\nlet message = 'Привет, мир!';\nconst PI = 3.14;\n```\n\n### Основные типы данных\n\n- `number` — числа\n- `string` — строки\n- `boolean` — true/false\n- `null` и `undefined`\n- `object` — объекты и массивы\n- `symbol` — уникальные идентификаторы (ES6)\n\n### Оператор typeof\n\n`typeof 42` // \"number\"\n`typeof \"текст\"` // \"string\"\n\n",
+            "initialCode": "// Задание: объявите переменную name и присвойте ей ваше имя.\n// Выведите её значение в консоль.\n\nlet name = 'Студент';\nconsole.log('Меня зовут', name);\n"
         },
         {
             "id": "functions",
-            "title": "Функции и стрелочные функции",
-            "content": "## Функции\n\nФункции — это основные строительные блоки JavaScript. Они позволяют переиспользовать код.\n\n### Function Declaration\n\n```javascript\nfunction greet(name) {\n  return `Привет, ${name}!`;\n}\n```\n\n### Стрелочные функции (ES6+)\n\n```javascript\nconst greet = (name) => `Привет, ${name}!`;\n```\n\nСтрелочные функции не имеют своего `this` и короче синтаксически.",
-            "initialCode": "// Создайте стрелочную функцию multiply, которая возвращает произведение двух чисел\n// Вызовите её и выведите результат\n"
+            "title": "2. Функции и стрелочные функции",
+            "content": "## Функции\n\nФункции — это основные строительные блоки JavaScript. Они позволяют переиспользовать код.\n\n### Function Declaration\n\n```javascript\nfunction greet(name) {\n  return `Привет, ${name}!`;\n}\n```\n\n### Стрелочные функции (ES6+)\n\n```javascript\nconst greet = (name) => `Привет, ${name}!`;\n```\n\nСтрелочные функции не имеют своего `this` и короче синтаксически.\n\n### Параметры по умолчанию\n\n```javascript\nfunction multiply(a, b = 2) {\n  return a * b;\n}\n```\n\n### Замыкания\n\nФункция может запоминать переменные из своей области видимости.\n\n```javascript\nfunction counter() {\n  let count = 0;\n  return () => ++count;\n}\nconst c = counter();\nconsole.log(c()); // 1\n```\n",
+            "initialCode": "// Задание: напишите стрелочную функцию multiply, которая принимает два числа\n// и возвращает их произведение. Вызовите её и выведите результат.\n\nconst multiply = (a, b) => a * b;\nconsole.log('3 * 4 =', multiply(3, 4));\n"
         },
         {
             "id": "arrays",
-            "title": "Массивы и методы перебора",
-            "content": "## Массивы\n\nМассив — это упорядоченная коллекция данных.\n\n```javascript\nconst fruits = ['яблоко', 'банан', 'апельсин'];\n```\n\n### Методы перебора\n\n- `forEach` — выполняет функцию для каждого элемента\n- `map` — создаёт новый массив с результатами вызова функции\n- `filter` — создаёт новый массив с элементами, прошедшими проверку\n- `reduce` — вычисляет одно значение на основе всего массива",
-            "initialCode": "// Дан массив чисел [1, 2, 3, 4, 5]\n// Используя map, создайте массив квадратов этих чисел и выведите его\n"
+            "title": "3. Массивы и методы перебора",
+            "content": "## Массивы\n\nМассив — это упорядоченная коллекция данных.\n\n```javascript\nconst fruits = ['яблоко', 'банан', 'апельсин'];\n```\n\n### Методы перебора\n\n- `forEach` — выполняет функцию для каждого элемента\n- `map` — создаёт новый массив с результатами вызова функции\n- `filter` — создаёт новый массив с элементами, прошедшими проверку\n- `reduce` — вычисляет одно значение на основе всего массива\n\n```javascript\nconst numbers = [1, 2, 3];\nconst squares = numbers.map(n => n * n); // [1,4,9]\nconst evens = numbers.filter(n => n % 2 === 0); // [2]\nconst sum = numbers.reduce((acc, n) => acc + n, 0); // 6\n```\n\n### Деструктуризация массива\n\n```javascript\nconst [first, second] = numbers;\nconsole.log(first); // 1\n```\n",
+            "initialCode": "// Задание: дан массив [10, 20, 30, 40, 50].\n// Используя map, создайте массив, увеличенный на 5, и выведите его.\n\nconst arr = [10, 20, 30, 40, 50];\nconst increased = arr.map(x => x + 5);\nconsole.log(increased);\n"
+        },
+        {
+            "id": "objects",
+            "title": "4. Объекты и деструктуризация",
+            "content": "## Объекты\n\nОбъекты — коллекции пар «ключ-значение».\n\n```javascript\nconst person = {\n  name: 'Анна',\n  age: 25\n};\n```\n\n### Деструктуризация объекта\n\n```javascript\nconst { name, age } = person;\nconsole.log(name); // Анна\n```\n\n### Spread-оператор\n\n```javascript\nconst updated = { ...person, age: 26 };\n```\n\n### Методы объекта\n\n```javascript\nconst calculator = {\n  value: 0,\n  add(n) { this.value += n; }\n};\n```\n",
+            "initialCode": "// Задание: создайте объект book с полями title и author.\n// Используя деструктуризацию, выведите их в консоль.\n\nconst book = { title: '1984', author: 'Оруэлл' };\nconst { title, author } = book;\nconsole.log(`Книга: ${title}, Автор: ${author}`);\n"
+        },
+        {
+            "id": "promises",
+            "title": "5. Промисы и асинхронность",
+            "content": "## Асинхронный код\n\nJavaScript — однопоточный, но может выполнять операции асинхронно.\n\n### Колбэки\n\n```javascript\nsetTimeout(() => console.log('Через секунду'), 1000);\n```\n\n### Промисы (Promises)\n\n```javascript\nfetch('https://api.example.com/data')\n  .then(response => response.json())\n  .then(data => console.log(data))\n  .catch(err => console.error(err));\n```\n\n### Async/await\n\n```javascript\nasync function fetchData() {\n  try {\n    const response = await fetch('...');\n    const data = await response.json();\n    return data;\n  } catch (err) {\n    console.error(err);\n  }\n}\n```\n",
+            "initialCode": "// Задание: напишите функцию delay, которая возвращает промис,\n// разрешающийся через указанное число миллисекунд.\n// Вызовите её с 1 сек и выведите 'Прошла секунда'.\n\nfunction delay(ms) {\n  return new Promise(resolve => setTimeout(resolve, ms));\n}\n\ndelay(1000).then(() => console.log('Прошла секунда'));\n"
+        },
+        {
+            "id": "classes",
+            "title": "6. Классы (ES6+)",
+            "content": "## Классы\n\nСинтаксис классов — это более удобный способ создания объектов и наследования.\n\n```javascript\nclass Animal {\n  constructor(name) {\n    this.name = name;\n  }\n  speak() {\n    console.log(`${this.name} издаёт звук.`);\n  }\n}\n\nclass Dog extends Animal {\n  speak() {\n    console.log(`${this.name} гавкает.`);\n  }\n}\n\nconst dog = new Dog('Бобик');\ndog.speak(); // Бобик гавкает.\n```\n\n### Статические методы\n\n```javascript\nclass MathUtils {\n  static add(a, b) { return a + b; }\n}\n```\n",
+            "initialCode": "// Задание: создайте класс Rectangle с конструктором (width, height).\n// Добавьте метод getArea, возвращающий площадь.\n// Создайте экземпляр и выведите площадь.\n\nclass Rectangle {\n  constructor(width, height) {\n    this.width = width;\n    this.height = height;\n  }\n  getArea() {\n    return this.width * this.height;\n  }\n}\n\nconst rect = new Rectangle(10, 5);\nconsole.log('Площадь:', rect.getArea());\n"
+        },
+        {
+            "id": "modules",
+            "title": "7. Модули (ES6+)",
+            "content": "## Модули\n\nES6 позволил разделять код на модули.\n\n```javascript\n// math.js\nexport const PI = 3.14;\nexport function add(a, b) { return a + b; }\n\n// app.js\nimport { add, PI } from './math.js';\nconsole.log(add(2, 3));\n```\n\n### Экспорт по умолчанию\n\n```javascript\nexport default class User { ... }\nimport User from './User.js';\n```\n",
+            "initialCode": "// Задание: в песочнице мы не можем импортировать модули,\n// но представьте, что у вас есть модуль math.js.\n// Создайте функцию subtract и «экспортируйте» её через глобальную переменную.\n\nfunction subtract(a, b) {\n  return a - b;\n}\n\nconsole.log('7 - 3 =', subtract(7, 3));\n"
         }
     ]
 }
