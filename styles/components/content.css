@@ -1,0 +1,4 @@
+﻿.c-content { padding: 30px; overflow-y: auto; height: 100%; }
+.c-content__theory { color: var(--color-text-primary); }
+.c-content__theory h2 { color: var(--color-text-secondary); margin: 20px 0 10px; }
+.c-content__theory code { background: var(--color-bg-tertiary); padding: 2px 6px; border-radius: 3px; font-family: var(--font-family-mono); font-size: var(--font-size-code); }

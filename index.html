@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Интерактивное учебное пособие по JavaScript ES6+">
+    <meta name="theme-color" content="#1E1E1E">
+    <link rel="manifest" href="manifest.json">
+    <title>JS Academy - Интерактивный учебник</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body class="app">
+    <div class="app__container">
+        <aside class="app__sidebar app__sidebar--left" role="navigation" aria-label="Навигация по урокам">
+            <nav class="c-nav" id="mainNavigation">
+                <h2 class="c-nav__title">Содержание курса</h2>
+                <ul class="c-nav__list" role="tablist"></ul>
+            </nav>
+        </aside>
+        <main class="app__content" role="main">
+            <section class="c-content">
+                <article class="c-content__theory" id="theoryBlock" aria-label="Теоретический материал"></article>
+            </section>
+            <section class="c-editor">
+                <div class="c-editor__toolbar" role="toolbar" aria-label="Панель инструментов редактора">
+                    <button class="c-editor__button c-editor__button--run" id="runCodeBtn" aria-label="Запустить код">▶
+                        Выполнить</button>
+                    <button class="c-editor__button c-editor__button--reset" id="resetCodeBtn"
+                        aria-label="Сбросить код">↺ Сброс</button>
+                </div>
+                <div class="c-editor__input-container">
+                    <textarea class="c-editor__input" id="codeEditor" spellcheck="false"
+                        aria-label="Редактор кода JavaScript" placeholder="// Введите ваш код здесь..."></textarea>
+                </div>
+                <div class="c-editor__console" id="customConsole" role="log" aria-label="Консоль вывода"
+                    aria-live="polite">
+                    <div class="c-editor__console-header">
+                        <span>Консоль</span>
+                        <button class="c-editor__button--clear" id="clearConsoleBtn"
+                            aria-label="Очистить консоль">✕</button>
+                    </div>
+                    <div class="c-editor__console-output" id="consoleOutput"></div>
+                </div>
+                <iframe class="c-editor__sandbox" id="codeSandbox" sandbox="allow-scripts allow-modals"
+                    title="Изолированная среда выполнения кода" hidden></iframe>
+            </section>
+        </main>
+        <aside class="app__sidebar app__sidebar--right" role="complementary" aria-label="Чат с ИИ-ментором">
+            <div class="c-chat" id="aiChat">
+                <div class="c-chat__header">
+                    <h2 class="c-chat__title">🤖 ИИ-ментор</h2>
+                    <span class="c-chat__status c-chat__status--online" aria-label="Ментор онлайн">● Online</span>
+                </div>
+                <div class="c-chat__messages" id="chatMessages" role="log" aria-live="polite"
+                    aria-label="История сообщений"></div>
+                <div class="c-chat__input-container">
+                    <textarea class="c-chat__input" id="chatInput" placeholder="Задайте вопрос ментору..."
+                        aria-label="Введите сообщение" rows="3"></textarea>
+                    <button class="c-chat__send-button" id="sendMessageBtn" aria-label="Отправить сообщение">↗</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <script type="module" src="js/app.js"></script>
+</body>
+
+</html>

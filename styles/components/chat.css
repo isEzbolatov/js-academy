@@ -1,0 +1,7 @@
+﻿.c-chat { display: grid; grid-template-rows: auto 1fr auto; height: 100vh; }
+.c-chat__header { padding: 20px; border-bottom: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center; }
+.c-chat__status--online { color: var(--color-text-accent); font-size: var(--font-size-small); }
+.c-chat__messages { padding: 20px; overflow-y: auto; }
+.c-chat__input-container { padding: 15px; border-top: 1px solid var(--color-border); display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: end; }
+.c-chat__input { background-color: var(--color-bg-tertiary); border-radius: 8px; padding: 10px; resize: none; font-size: var(--font-size-code); }
+.c-chat__send-button { padding: 10px 15px; background-color: #0E639C; color: white; border-radius: 8px; }

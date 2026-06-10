@@ -1,0 +1,31 @@
+﻿:root {
+    --color-bg-primary: #1E1E1E;
+    --color-bg-secondary: #252526;
+    --color-bg-tertiary: #2D2D2D;
+    --color-bg-hover: #3E3E3E;
+    --color-text-primary: #D4D4D4;
+    --color-text-secondary: #9CDCFE;
+    --color-text-accent: #4EC9B0;
+    --color-text-error: #F44747;
+    --color-code-keyword: #569CD6;
+    --color-code-string: #CE9178;
+    --color-code-function: #DCDCAA;
+    --color-code-number: #B5CEA8;
+    --color-code-comment: #6A9955;
+    --color-border: #3E3E3E;
+    --color-border-focus: #007ACC;
+    --shadow-panel: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --sidebar-width-left: 280px;
+    --sidebar-width-right: 350px;
+    --font-family-mono: 'Fira Code', 'Consolas', monospace;
+    --font-family-sans: 'Segoe UI', system-ui, sans-serif;
+    --font-size-base: 16px;
+    --font-size-code: 14px;
+    --font-size-small: 12px;
+    --line-height-base: 1.6;
+    --transition-fast: 150ms ease;
+    --transition-normal: 300ms ease;
+    --z-sidebar: 100;
+    --z-overlay: 200;
+    --z-modal: 300;
+}

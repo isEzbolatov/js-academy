@@ -1,0 +1,10 @@
+﻿{
+    "lessons": [
+        {
+            "id": "intro",
+            "title": "Введение в JavaScript",
+            "content": "## Переменные и типы данных\nJavaScript поддерживает динамическую типизацию.",
+            "initialCode": "// Попробуйте объявить переменную\nlet message = 'Привет, мир!';\nconsole.log(message);"
+        }
+    ]
+}

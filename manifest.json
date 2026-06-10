@@ -1,0 +1,10 @@
+﻿{
+    "name": "JS Academy - Интерактивный учебник",
+    "short_name": "JS Academy",
+    "description": "Автономное интерактивное учебное пособие по JavaScript ES6+",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#1E1E1E",
+    "theme_color": "#1E1E1E",
+    "icons": []
+}
