@@ -1,45 +1,25 @@
-﻿/**
- * @module AIConnector
- * @description Отправляет запросы к API нейросети (OpenRouter или имитация).
- * Поддерживает потоковый вывод (Streaming).
- */
-export class AIConnector {
+﻿export class AIConnector {
     constructor() {
         this._apiKey = localStorage.getItem('ai_api_key') || '';
         this._endpoint = 'https://openrouter.ai/api/v1/chat/completions';
     }
 
-    /**
-     * Устанавливает API-ключ и сохраняет его.
-     * @param {string} key
-     */
     setApiKey(key) {
         this._apiKey = key;
         localStorage.setItem('ai_api_key', key);
     }
 
-    /** Есть ли заданный ключ */
     hasRealApi() {
         return this._apiKey.length > 0;
     }
 
-    /**
-     * Отправляет запрос к нейросети.
-     * @param {Object} params
-     * @param {string} params.userMessage
-     * @param {string} [params.userCode]
-     * @param {Array} [params.history]
-     * @returns {AsyncGenerator<string>}
-     */
     async *sendMessage({ userMessage, userCode, history = [] }) {
         if (!this.hasRealApi()) {
-            // Имитация ответа
             const mock = this._generateMockResponse(userMessage, userCode);
             yield* this._simulateStream(mock);
             return;
         }
 
-        // Реальный запрос к OpenRouter
         const systemPrompt = `Ты — наставник по JavaScript. Помоги студенту научиться, используя сократический метод: не давай готовый код, а задавай наводящие вопросы, указывай на возможные ошибки и подталкивай к правильному решению. Веди диалог, оглядываясь на код, который студент написал в редакторе. Отвечай кратко, дружелюбно.`;
 
         const messages = [
@@ -51,7 +31,6 @@ export class AIConnector {
             { role: 'user', content: userMessage }
         ];
 
-        // Если в сообщении пользователя есть код, добавляем его
         if (userCode && !userMessage.includes('[КОД ПОЛЬЗОВАТЕЛЯ]')) {
             messages.push({ role: 'user', content: `Мой текущий код в редакторе:\n\`\`\`js\n${userCode}\n\`\`\`` });
         }
@@ -65,7 +44,7 @@ export class AIConnector {
                 'X-Title': 'JS Academy'
             },
             body: JSON.stringify({
-                model: 'openai/gpt-3.5-turbo', // можно заменить на другую модель
+                model: 'deepseek/deepseek-chat',   // ← DeepSeek, работает в РФ
                 messages,
                 stream: true
             })
@@ -97,14 +76,11 @@ export class AIConnector {
                     const json = JSON.parse(dataStr);
                     const delta = json.choices[0]?.delta?.content;
                     if (delta) yield delta;
-                } catch (e) {
-                    // игнорируем ошибки парсинга
-                }
+                } catch (e) { }
             }
         }
     }
 
-    // --- вспомогательные методы ---
     _generateMockResponse(message, code) {
         const msg = message.toLowerCase();
         if (code && code.includes('console.log')) {

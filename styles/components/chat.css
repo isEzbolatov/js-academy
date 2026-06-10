@@ -5,11 +5,13 @@
 }
 
 .c-chat__header {
-    padding: 20px;
+    padding: 16px 20px;
     border-bottom: 1px solid var(--color-border);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .c-chat__status--online {
@@ -75,6 +77,7 @@
     font-style: italic;
 }
 
+/* API ключ */
 .c-chat__api-key {
     display: flex;
     gap: 4px;
@@ -88,5 +91,5 @@
     color: var(--color-text-primary);
     padding: 4px 8px;
     font-size: 12px;
-    width: 160px;
+    width: 150px;
 }
