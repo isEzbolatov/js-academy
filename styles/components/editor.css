@@ -1,11 +1,84 @@
-﻿.c-editor { border-top: 1px solid var(--color-border); background-color: var(--color-bg-primary); display: grid; grid-template-rows: auto 1fr 200px; }
-.c-editor__toolbar { padding: 10px; background-color: var(--color-bg-secondary); display: flex; gap: 10px; }
-.c-editor__button { padding: 6px 16px; border-radius: 4px; background-color: var(--color-bg-tertiary); transition: background-color var(--transition-fast); }
-.c-editor__button:hover { background-color: var(--color-bg-hover); }
-.c-editor__button--run { background-color: #0E639C; color: white; }
-.c-editor__button--run:hover { background-color: #1177BB; }
-.c-editor__input-container { position: relative; }
-.c-editor__input { width: 100%; height: 100%; padding: 15px; font-family: var(--font-family-mono); font-size: var(--font-size-code); background-color: var(--color-bg-primary); color: var(--color-text-primary); resize: none; tab-size: 2; }
-.c-editor__console { background-color: var(--color-bg-secondary); border-top: 1px solid var(--color-border); }
-.c-editor__console-header { padding: 8px 15px; background-color: var(--color-bg-tertiary); display: flex; justify-content: space-between; align-items: center; font-size: var(--font-size-small); text-transform: uppercase; }
-.c-editor__console-output { padding: 10px 15px; font-family: var(--font-family-mono); font-size: var(--font-size-code); height: calc(100% - 36px); overflow-y: auto; }
+﻿.c-editor {
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-bg-primary);
+    display: grid;
+    grid-template-rows: auto 1fr 200px;
+}
+
+.c-editor__toolbar {
+    padding: 10px;
+    background-color: var(--color-bg-secondary);
+    display: flex;
+    gap: 10px;
+}
+
+.c-editor__button {
+    padding: 6px 16px;
+    border-radius: 4px;
+    background-color: var(--color-bg-tertiary);
+    transition: background-color var(--transition-fast);
+}
+
+.c-editor__button:hover {
+    background-color: var(--color-bg-hover);
+}
+
+.c-editor__button--run {
+    background-color: #0E639C;
+    color: white;
+}
+
+.c-editor__button--run:hover {
+    background-color: #1177BB;
+}
+
+.c-editor__input-container {
+    position: relative;
+}
+
+.c-editor__input {
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-code);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    resize: none;
+    tab-size: 2;
+}
+
+.c-editor__console {
+    background-color: var(--color-bg-secondary);
+    border-top: 1px solid var(--color-border);
+}
+
+.c-editor__console-header {
+    padding: 8px 15px;
+    background-color: var(--color-bg-tertiary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--font-size-small);
+    text-transform: uppercase;
+}
+
+.c-editor__console-output {
+    padding: 10px 15px;
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-code);
+    height: calc(100% - 36px);
+    overflow-y: auto;
+}
+
+.c-editor__console-line--log {
+    color: #D4D4D4;
+}
+
+.c-editor__console-line--error {
+    color: #F44747;
+}
+
+.c-editor__console-line--warn {
+    color: #CCA700;
+}

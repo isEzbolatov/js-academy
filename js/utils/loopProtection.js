@@ -1,5 +1,4 @@
-﻿/** @module loopProtection */
-export function injectLoopProtection(code) {
-    // Заглушка – будет реализовано позже
+﻿export function injectLoopProtection(code) {
+    // Пока просто возвращаем исходный код
     return code;
 }
